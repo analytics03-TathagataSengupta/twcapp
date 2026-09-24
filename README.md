@@ -2,13 +2,14 @@
 
 A WebView wrapper for https://togetherwecan.alcoverealty.in
 
-## Option A: build on GitHub (no installs)
-1. Create a new GitHub repo and upload everything in this folder, including `.github/`.
-2. Open the **Actions** tab. The "Build APK" job runs automatically, taking about 3-4 minutes.
-3. Open the finished run, then download **TogetherWeCan-apk** under Artifacts. It's a zip containing `app-debug.apk`.
+## Build the APK (GitHub)
+1. Add the 4 secrets from GITHUB-SECRETS.txt under Settings > Secrets and variables > Actions.
+   These are kept separately and are NOT in this zip.
+2. Push or upload these files to `main`, keeping everything at the top level of the repo.
+3. Open Actions > Build APK > the latest run > Artifacts > **TogetherWeCan-release**.
+   `TogetherWeCan.apk` is inside.
 
-## Option B: Android Studio
-Open this folder in Android Studio, let it sync, then choose **Build > Build APK(s)**.
+Every build is signed with the same key, so new versions install over old ones.
 
 ## Change things
 - URL / allowed domain: `START_URL` and `ALLOWED_HOST` in `MainActivity.java`
